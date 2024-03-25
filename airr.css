@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.container {
+    display: flex; /* Overlapping requires removing flexbox */
+    width: 100vw;
+    height: 100vh;
+    position: relative;  /* Enable absolute positioning for overlap */
+}
+
+.page {
+    position: absolute;  /* Make pages absolute for overlap */
+    top: 50%;  /* Center pages vertically */
+    left: 50%;  /* Center pages horizontally */
+    transform: translate(-50%, -50%);  /* Account for centering */
+    width: 50%;  /* Adjust width as needed */
+    height: 50%;  /* Adjust height as needed */
+    text-align: center;
+}
+
+.message-box {
+    background-color: pink; /* Set a base color for the box */
+    padding: 20px;
+    border-radius: 5px;  /* Add rounded corners for a softer look */
+}
+
+.page.dragging .message-box {
+    opacity: 0.7;  /* Add transparency while dragging */
+}
+
+.page h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
